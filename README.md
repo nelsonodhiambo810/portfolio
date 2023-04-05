@@ -21,4 +21,4 @@ License
 This website is licensed under [insert license type]. You are free to use and modify the code for your own personal or commercial use, but please give credit where credit is due.
 
 Contact
-If you have any questions or feedback about the website, please feel free to contact me at [insert contact email].
+If you have any questions or feedback about the website, please feel free to contact me at [odhiambonelson810@gmail.com].
