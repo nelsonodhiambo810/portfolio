@@ -1,0 +1,136 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+      
+      .container {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 20px;
+      }
+      
+      h2 {
+        text-align: center;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      input[type="text"], input[type="password"] {
+        border: 2px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      
+      input[type="submit"] {
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      
+      .loading-icon {
+        background: url('https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif') no-repeat center center;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('form').submit(function(event) {
+          if($('#username').val() == '' || $('#password').val() == ''){
+            alert('Please fill in both the fields.');
+            event.preventDefault(); //prevents form submission
+          }
+          else{
+            $('input[type="submit"]').attr('disabled', true);
+            $('input[type="submit"]').val('');
+            $('input[type="submit"]').addClass('loading-icon');
+            setTimeout(function() {
+              $('input[type="submit"]').attr('disabled', false);
+              $('input[type="submit"]').removeClass('loading-icon');
+              $('input[type="submit"]').val('Login');
+              $('form').submit();
+            }, 2000); // 2 seconds delay
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login</h2>
+      <form action="general.html" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Login">
+      </form>
+    </div>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head >
+  <title>My VRML World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.x3dom.org/release/x3dom.js"></script>
+  <link rel="stylesheet" href="https://www.x3dom.org/release/x3dom.css">
+</head>
+<body>
+  <h1><b>Do you want to spinn the cube as you wait to be logged in ?</b></h1>
+  <x3d width="600px" height="400px">
+    <scene>
+      <background skyColor='0.2 0.2 0.8'></background>
+      <viewpoint position="0 0 10"></viewpoint>
+      <transform translation="0 0 -10">
+        <shape>
+          <appearance>
+            <material diffuseColor='1 1 0.2'></material>
+          </appearance>
+          <box></box>
+        </shape>
+      </transform>
+    </scene>
+  </x3d>
+</body>
+</html>
+
+
